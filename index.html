@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque de Fêderim</title>
+    <link rel="icon" type="image/png" href="image/logo-lune.avif">
+    <style>
+        :root {
+            --nuit: rgba(12, 15, 32, 0.78);
+            --nuit-claire: rgba(20, 24, 48, 0.62);
+            --filet: rgba(190, 196, 240, 0.22);
+            --accent: #9aa2ff;
+            --texte: #e8eaf4;
+            --texte-doux: #c3c7de;
+            --lune: #eceefb;
+            --encre: #0c0f20;
+            --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: black;
+            background-image: url(image/lune.avif);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Voile sombre pour garder le texte lisible sur l'image */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(6, 8, 20, 0.55), rgba(6, 8, 20, 0.82));
+            z-index: -1;
+        }
+
+        body {
+            margin: 0 auto;
+            padding: 28px 20px;
+            max-width: 1100px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--texte);
+        }
+
+        header,
+        footer,
+        main > div:first-child {
+            background-color: var(--nuit);
+            border: 1px solid var(--filet);
+            border-radius: 4px;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+
+        header {
+            text-align: center;
+            padding: 36px 28px 30px;
+            color: var(--lune);
+            border-top: 2px solid var(--accent);
+        }
+        header h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.6rem, 4vw, 2.3rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+        }
+        header h2 u {
+            text-decoration: none;
+        }
+        header p {
+            max-width: 68ch;
+            margin: 0 auto;
+            text-align: center;
+            text-indent: 0;
+            font-size: 0.98rem;
+            color: var(--texte-doux);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        main > div:first-child {
+            margin: 0;
+            padding: 24px 32px;
+        }
+
+        p {
+            margin: 0;
+            color: var(--texte);
+            text-align: justify;
+            text-indent: 2rem;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+        main > div:first-child p {
+            max-width: 72ch;
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--accent);
+            text-underline-offset: 3px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        a:hover {
+            color: var(--encre);
+            background-color: var(--lune);
+        }
+        a:focus-visible {
+            outline: 2px solid var(--lune);
+            outline-offset: 3px;
+        }
+
+        #pages,
+        #desc {
+            display: flex;
+            gap: 16px;
+            margin: 0;
+        }
+
+        .button {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+            padding: 10px 12px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.82rem;
+            line-height: 1.35;
+            color: var(--lune);
+            background-color: var(--nuit);
+            border: 1px solid var(--filet);
+            border-bottom: 2px solid var(--accent);
+            border-radius: 4px;
+        }
+        .button:hover {
+            color: var(--encre);
+            background-color: var(--lune);
+            border-bottom-color: var(--lune);
+        }
+
+        .desc {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+            padding: 14px 16px;
+            text-align: left;
+            text-indent: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--texte-doux);
+            background-color: var(--nuit-claire);
+            border: 1px solid var(--filet);
+            border-radius: 4px;
+        }
+
+        #extensions {
+            margin: 0;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 18px 28px;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            text-align: center;
+            color: var(--texte-doux);
+        }
+        footer div {
+            flex: 1;
+            margin: 0;
+        }
+        footer p {
+            text-align: center;
+            text-indent: 0;
+            color: var(--texte-doux);
+        }
+        footer div:last-child br:first-child {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .button {
+                font-size: 0.74rem;
+                letter-spacing: 0.08em;
+            }
+            .desc {
+                font-size: 0.84rem;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 12px;
+                gap: 16px;
+            }
+            header {
+                padding: 26px 16px 22px;
+            }
+            main > div:first-child {
+                padding: 18px 16px;
+            }
+            #pages {
+                flex-direction: column;
+            }
+            #desc {
+                display: none;
+            }
+            footer {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            a {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2><u>La Grande Bibliothèque de Fêderim</u></h2>
+        <p>Ce site décrit les lieux, les personnages, les organisations, les dieux et la politique du monde de Fêderim, un monde créé pour être un cadre de campagne dans le jeu de rôle sorti en 2026 créé en partie pas le scénaristique bien connu aux initiales MM.</p>
+    </header>
+    <main>
+        <div>
+            <p>
+                Fêderim est un univers de Fantasy où Sept nations sont en conflit et en concurrence constante.
+                Les raisons de cela sont, en général, fondées mais il arrive que certains de ces conflits ne soit
+                que le fruit d'une habitude de guerroyer ayant rendu cela indispensable.
+            </p>
+        </div>
+        <div id="pages">
+            <a href="" class="button">Les Lieux</a>
+            <a href="" class="button">Les Personnages</a>
+            <a href="" class="button">Les Organisations</a>
+            <a href="" class="button">Les Dieux</a>
+            <a href="" class="button">Les Extensions</a>
+        </div>
+        <div id="desc">
+            <p class="desc">Cette page présente les lieux de Fêderim, leur histoire et leur situation politique.</p>
+            <p class="desc">Cette page présente les personnages de Fêderim, leur vie et leur rôle dans le monde.</p>
+            <p class="desc">Cette page présente les organisations et cultes de Fêderim, leurs objectifs et leurs valeurs.</p>
+            <p class="desc">Cette page présente les divinités de Fêderim, leurs pouvoirs et leurs objectifs.</p>
+            <p class="desc">Cette page présente les extensions pour le jeu de rôle destiné à être jouées dans Fêderim.</p>
+        </div>
+        <div id="extensions">
+
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>© 2026 Yann Sorel--Pailhes - Fêderim. Tous droits réservés. <br> Un site réalisé par Yann Sorel--Pailhes.</p>
+        </div>
+        <div>
+            <br><a href="legal.html">Mentions légales</a>
+            <br><a href="LICENSE.md">Licence</a>
+        </div>
+    </footer>
+</body>
+</html>
