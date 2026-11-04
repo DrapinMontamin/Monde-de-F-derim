@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr" style="display: block;background-image: url(../image/lune.avif);background-attachment: fixed;background-size: cover;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../image/logo-lune.avif">
+    <title>Lieux de Fêderim</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: row;
+        }
+        a {
+            color: white;
+        }
+        a:hover {
+            color: rgb(89, 89, 255);
+        }
+        .button {
+            padding: 5px;
+            flex: 1;
+            background-color: rgb(89, 89, 255);
+            margin: 25px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: white;
+            color: rgb(89, 89, 255);
+        }
+        .menu {
+            position: fixed;
+            bottom: 40px;
+            right: 37px;
+            z-index: 1000;
+            border-radius: 5px;
+            padding: 1px;
+        }
+        .menu:hover {
+            background-color: white !important;
+            color: rgb(89, 89, 255) !important;
+        }
+        .espace {
+            flex: 1;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+        }
+        @media (max-width: 600px) {
+            section, nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align: center;background-color: rgb(89, 89, 255);color: white;border-radius: 5px;padding: 5px;">
+        <h1><u>Les Lieux de Fêderim</u></h1>
+        <p>D'ici vous pouvez accéder à toutes (ou presque toutes) les informations sur le monde passionant et regorgeant d'histoires de Fêderim.</p>
+    </header>
+    <nav style="text-align: center;display: flex;">
+        <a href="personnages.html" class="button" >Les Personnages</a>
+        <a href="organisations.html" class="button" >Les Organisations</a>
+        <a href="dieux.html" class="button">Les Dieux</a>
+        <a href="extensions.html" class="button" >Les Extensions</a>
+    </nav>
+    <main style="background-color: rgba(89, 89, 255, 0.25);margin: 20px;border-radius: 5px;padding: 5px;">
+    <section>
+        <div class="espace"></div>
+        <div style="flex: 1;background-color: rgb(89, 89, 255);border-radius: 5px;color: white;"><p style="text-align: center;">Les Sept Nations</p></div>
+        <div class="espace"></div>
+    </section>
+    <section>
+        <a href="lieux/ismale.html" class="button">La République Ismalienne</a>
+        <a href="lieux/khar.html" class="button">La Terre de Khar</a>
+        <a href="lieux/oddau.html" class="button">L'Île d'Oddau</a>
+        <a href="lieux/pays-dore.html" class="button">Le Pays Doré</a>
+    </section>
+    <section>
+        <a href="lieux/sagdar.html" class="button">La Baasirat de Sagdar</a>
+        <a href="lieux/terre-mere.html" class="button">Les Terres de la Mère</a>
+        <a href="lieux/thrakan.html" class="button">Le Thrakan</a>
+    </section>
+    </main>
+    <a href="../index.html" style="background-color: rgb(89, 89, 255);color: white;text-decoration: none;" class="menu">Sommaire</a>
+</body>
+</html>

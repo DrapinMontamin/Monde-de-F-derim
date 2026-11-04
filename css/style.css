@@ -1,0 +1,107 @@
+html{
+    background-color: blue;
+    display: block;
+    background-image: url(../image/lune.avif);
+    background-attachment: fixed;
+    background-size: cover;
+}
+main {
+    display: flex;
+}
+header{
+    text-align: center !important;
+    background-color: rgb(89, 89, 255);
+    border-radius: 5px;
+    color: white;
+    /*padding: 5px;*/
+}
+section {
+    background-color: rgb(89, 89, 255);
+    margin: 40px;
+    border-radius: 5px;
+    padding: 2px;
+}
+p {
+   text-indent: 40px;
+   text-align: justify;
+}
+a {
+    color: white;
+}
+div {
+    margin: 8px;
+}
+.letter {
+    background-color: rgba(89, 89, 255, 0.7);
+    border-radius: 5px;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+.gauche {
+    display: block fixed;
+    flex : 1;
+    border-radius: 5px;
+    background-color: rgba(89, 89, 255, 0.7);
+    margin-right: 10px;
+}
+.droite {
+    display: block;
+    text-align: left;
+    flex : 5;
+    margin-left: 10px;
+}
+.haut {
+    position: fixed;
+    bottom: 10px;      /* distance depuis le haut */
+    right: 20px;    /* ou left: 20px */
+    z-index: 1000;  /* pour rester au-dessus des autres éléments */
+    border-radius: 5px;
+    padding: 1px;
+}
+.menu {
+    position: fixed;
+    bottom: 40px;      /* distance depuis le haut */
+    right: 37px;    /* ou left: 20px */
+    z-index: 1000;  /* pour rester au-dessus des autres éléments */
+    border-radius: 5px;
+    padding: 1px;
+}
+.haut:hover {
+    background-color: white !important;
+    color: rgb(89, 89, 255) !important;
+}
+.menu:hover {
+    background-color: white !important;
+    color: rgb(89, 89, 255) !important;
+}
+.button {
+   flex: 1;
+   background-color: rgb(89, 89, 255);
+   margin: 5px;
+   border-radius: 5px;
+   color: white;
+   text-decoration: none;
+}
+.button:hover {
+   background-color: white;
+   color: rgb(89, 89, 255);
+}
+yann {
+    display: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5px;
+}
+th, td {
+    padding: 10px;
+    border: 2px solid blue;
+}
+th {
+    font-weight: bold;
+}
+.inter {
+    background-color: rgb(135, 135, 254);
+    text-align: center;
+}
