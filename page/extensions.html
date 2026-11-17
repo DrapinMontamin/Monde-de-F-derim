@@ -49,11 +49,15 @@
         </nav>
         <main>
         <nav class="gauche" style="color: white;">
+            <ul>- Raccourcis :
+                <li><a href="#Classes">Les Classes</a></li>
+                <li><a href="#Domaines">Les Domaines</a></li>
+            </ul>
             <ul id="a">- A :
                 
             </ul>
             <ul  id="b">- B :
-                
+                <li><a href="#Bouclier">Voie du Bouclier</a></li>
             </ul>
             <ul  id="c">- C :
 
@@ -62,7 +66,7 @@
                 
             </ul>
             <ul id="e">- E :
-                
+                <li><a href="#Erassien">Ordre Erassien</a></li>
             </ul>
             <ul id="f">- F :
                 
@@ -92,10 +96,10 @@
                 
             </ul>
             <ul id="o">- O :
-                
+                <li><a href="#Erassien">Ordre Erassien</a></li>
             </ul>
             <ul id="p">- P :
-                
+                <li><a href="#Phénix">Voie du Phénix</a></li>
             </ul>
             <ul id="q">- Q :
                 
@@ -113,7 +117,8 @@
                 
             </ul>
             <ul id="v">- V :
-                
+                <li><a href="#Bouclier">Voie du Bouclier</a></li>
+                <li><a href="#Phénix">Voie du Phénix</a></li>
             </ul>
             <ul id="w">- W :
 
@@ -129,9 +134,68 @@
             </ul>
         </nav>
         <nav class="droite" style="color: white;">
-        <section class="inter">
+        <section>
             <div>
-                <h3><u>Les Extensions</u></h3>
+                <p>
+                    Les cartes présentes sur cette page sont cliquables et renvoient vers une version PDF téléchargeable et imprimable de la carte.
+                </p>
+            </div>
+        </section>
+        <section class="inter" id="Classes">
+            <div>
+                <h3><u>Les Classes</u></h3>
+            </div>
+        </section>
+        <section id="Erassien">
+            <div>
+                <h3><u>L'Ordre des Erassiens</u></h3>
+                <div class="cards">
+                    <img src="extensions/erassien.png" alt="Erassien" class="imgext" onclick="window.open('extensions/erassien.pdf', '_blank')">
+                    <p style="flex: 2;">
+                        <!-- Vide -->
+                    </p>
+                </div>
+                <b id="Phénix"><u>La Voie du Phénix</u></b>
+                <div class="cards">
+                    <img src="extensions/phenix.png" alt="Phénix" class="imgext" onclick="window.open('extensions/phenix.pdf', '_blank')">
+                    <p style="flex: 2;">
+                        <!-- Vide -->
+                    </p>
+                </div>
+                <b id="Bouclier"><u>La Voie du Bouclier</u></b>
+                <div class="cards">
+                    <img src="extensions/bouclier.png" alt="Bouclier" class="imgext" onclick="window.open('extensions/bouclier.pdf', '_blank')">
+                    <p style="flex: 2;">
+                        <!-- Vide -->
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="inter" id="Domaines">
+            <div>
+                <h3><u>Les Domaines</u></h3>
+            </div>
+        </section>
+        <section id="Techno">
+            <div>
+                <h3><u>Le Domaine de la Technologie</u></h3>
+                <p>
+                    Le Domaine de la terchnologie est un nouveau domaine pour DH. Les cartes de ce domaine sont réparties en 3 catégories :
+                    <ul>
+                        <li>Les cartes Arsenals : cette catégorie regroupe les gadgets, armes et tout l'équipement offensif.</li>
+                        <li>Les cartes Automates : cette catégorie regroupe tous les systèmes d'automatisation d'une chose donnée et les droïdes.</li>
+                        <li>Les cartes Ingénieries : cette catégorie regroupe tous les outils et connaissances nécessaires en ingénierie pour maîtriser ce domaine.</li>
+                    </ul>
+                </p>
+                <b><u>Niveau 1</u></b>
+                <div class="cards">
+                    <img src="extensions/grenades.png" alt="Grenade" class="imgext" onclick="window.open('extensions/niv1-grenades.pdf', '_blank')">
+                    <img src="extensions/droide_obeissant.png" alt="Droïde obéissant" class="imgext" onclick="window.open('extensions/niv1-droide_obeissant.pdf', '_blank')">
+                </div>
+                <div class="cards">
+                    <img src="extensions/reparation.png" alt="Réparation" class="imgext" onclick="window.open('extensions/niv1-reparation.pdf', '_blank')">
+                    <p style="flex: 1;margin: 10px;"><!-- Pour que la carte garde sa taille --></p>
+                </div>
             </div>
         </section>
         </nav>

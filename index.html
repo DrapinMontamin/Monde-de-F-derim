@@ -25,9 +25,7 @@
             color: white;
             padding: 2px;
             border-radius: 5px;
-        }
-        main {
-            min-height: 375px;
+            margin-top: 16px;
         }
         a {
             color: white;
@@ -65,19 +63,22 @@
             padding: 2px;
             flex: 1;
         }
-        #page {
+        .page {
             flex-direction: row;
             display: flex;
         }
-        #desc {
+        .descbox {
             display: flex;
         }
         @media (max-width: 600px) {
-            #page {
+            .page {
                 flex-direction: column;
             }
-            #desc {
+            .descbox {
                 display: none;
+            }
+            .button {
+                padding: 10px;
             }
         }
     </style>
@@ -95,22 +96,25 @@
                 que le fruit d'une habitude de guerroyer ayant rendu cela indispensable.
             </p>
         </div>
-        <div id="page">
+        <div class="page">
             <a href="page/lieux.html" class="button">Les Lieux</a>
             <a href="page/personnages.html" class="button">Les Personnages</a>
             <a href="page/organisations.html" class="button">Les Organisations</a>
-            <a href="page/dieux.html" class="button">Les Dieux</a>
-            <a href="page/extensions.html" class="button">Les Extensions</a>
         </div>
-        <div id="desc">
+        <div class="descbox">
             <p class="desc">Cette page présente les lieux de Fêderim, leur histoire et leur situation politique.</p>
             <p class="desc">Cette page présente les personnages de Fêderim, leur vie et leur rôle dans le monde.</p>
             <p class="desc">Cette page présente les organisations et cultes de Fêderim, leurs objectifs et leurs valeurs.</p>
+        </div>
+        <div class="page">
+            <a href="page/dieux.html" class="button">Les Dieux</a>
+            <a href="page/extensions.html" class="button">Les Extensions</a>
+            <a href="https://terrahill.fr/" class="button">Le Monde de Terrahill</a>
+        </div>
+        <div class="descbox">
             <p class="desc">Cette page présente les divinités de Fêderim, leurs pouvoirs et leurs objectifs.</p>
             <p class="desc">Cette page présente les extensions pour le jeu de rôle destiné à être jouées dans Fêderim.</p>
-        </div>
-        <div id="extensions">
-
+            <p class="desc">Ce bouton renvoie vers le site de Terrahill, l'univers médiéval fantastique créé par le même créateur que Fêderim.</p>
         </div>
     </main>
     <footer style="display: flex;text-align: center;">

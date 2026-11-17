@@ -112,3 +112,23 @@ th {
     background-color: rgb(135, 135, 254);
     text-align: center;
 }
+.imgext {
+    transition: transform 0.2s ease;
+    width: 100%;
+    flex: 1;
+    margin: 10px;
+    border-radius: 20px;
+}
+.imgext:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+    }
+}
