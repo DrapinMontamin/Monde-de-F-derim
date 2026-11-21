@@ -128,17 +128,78 @@
                 
             </ul>
         </nav>
-        <nav class="droite" style="color: white;">
-        <section class="inter">
+        <nav class="droite" style="color: white;" id="contenu">
+        <template id="model">
+        <section>
             <div>
-                <h3><u>Les Personnages</u></h3>
+                <h3 class="nom"></h3>
+                <ul>
+                    <li><b>Race : </b><span class="race"></span></li>
+                    <li><b>Sexe : </b><span class="sexe"></span></li>
+                    <li><b>Statut : </b><span class="statut"></span></li>
+                    <li><b>Âge : </b><span class="age"></span></li>
+                    <li><b>Fonction : </b><span class="fonction"></span></li>
+                    <li><b>Lieu de vie : </b><span class="lieu"></span></li>
+                    <li><b>Richesse : </b><span class="richesse"></span></li>
+                </ul>
+                <p class="desc"></p>
             </div>
         </section>
+        </template>
         </nav>
         </main>
         <footer>
             <a href="" style="background-color: rgb(89, 89, 255);color: white;text-decoration: none;" class="haut">Retour en Haut</a>
             <a href="../index.html" style="background-color: rgb(89, 89, 255);color: white;text-decoration: none;" class="menu">Sommaire</a>
         </footer>
+        <script>
+            const contenu = document.getElementById("contenu");
+            const model = document.getElementById("model");
+
+              fetch("personnages.json").then(reponse => reponse.json()).then(personnages => {
+                  // Tri alphabétique optionnel des personnages
+                  personnages.sort((a, b) => a.nom.localeCompare(b.nom));
+
+                  personnages.forEach(perso => {
+                    const clone = model.content.cloneNode(true);
+        
+                    // Création d'un identifiant unique pour le lien d'ancrage (ex: "jeckad-authos")
+                    const idAncre = perso.id.replace(/\s+/g, '');
+                    clone.querySelector("section").id = idAncre;
+            
+                    // Remplissage des informations
+                    clone.querySelector(".nom").textContent = perso.nom;
+                    clone.querySelector(".race").textContent = perso.race || "Inconnue";
+                    clone.querySelector(".sexe").textContent = perso.sexe || "Inconnu";
+                    clone.querySelector(".statut").textContent = perso.statut || "Inconnu";
+                    clone.querySelector(".age").textContent = perso.age || "Inconnue";
+                    clone.querySelector(".fonction").textContent = perso.fonction || "Aucune";
+                    clone.querySelector(".richesse").textContent = perso.richesse || "Inconnue";
+                    clone.querySelector(".lieu").textContent = perso.lieu || "Inconnue";
+                    clone.querySelector(".desc").textContent = perso.desc || "";
+            
+                    contenu.appendChild(clone);
+                    
+                    // Ajout automatique dans le menu alphabétique de gauche
+                    const premiereLettre = perso.nom.charAt(0).toLowerCase();
+                    const listeLettre = document.getElementById(premiereLettre);
+                    if (listeLettre) {
+                      const li = document.createElement("li");
+                      const a = document.createElement("a");
+                      a.href = `#${idAncre}`;
+                      a.textContent = perso.menu;
+                      li.appendChild(a);
+                      listeLettre.appendChild(li);
+                    }
+                });
+                    if (window.location.hash) {
+                        const cible = document.querySelector(window.location.hash);
+                        if (cible) {
+                            cible.scrollIntoView({ behavior: "smooth" }); // Mettre "smooth" pour un saut chill ou "auto" pour un saut instantané
+                        }
+                    }
+                })
+                .catch(erreur => console.error("Erreur de chargement du JSON :", erreur));
+        </script>
 	</body>
 </html>
