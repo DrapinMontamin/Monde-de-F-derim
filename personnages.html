@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Les Personnages</title>
+		<meta charset="utf-8">
+        <link rel="icon" type="image/png" href="../image/logo-lune.avif">
+        <link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+        <header>
+            <h1><u>Les Personnages</u></h1>
+            <p style="text-align: center;">Cette page présente les personnages de Fêderim, leur vie et leur rôle dans le monde.</p>
+		</header>
+        <nav style="text-align: center;display: flex;">
+            <a href="lieux.html" class="button" >Les Lieux</a>
+            <a href="organisations.html" class="button" >Les Organisations</a>
+            <a href="dieux.html" class="button" >Les Dieux</a>
+            <a href="extensions.html" class="button">Les Extensions</a>
+        </nav>
+        <nav style="text-align: center;" class="letter">
+            <p style="color: white;">
+                <a href="#a"  >A</a> - 
+                <a href="#b"  >B</a> - 
+                <a href="#c"  >C</a> - 
+                <a href="#d"  >D</a> - 
+                <a href="#e"  >E</a> - 
+                <a href="#f"  >F</a> - 
+                <a href="#g"  >G</a> - 
+                <a href="#h"  >H</a> - 
+                <a href="#i"  >I</a> - 
+                <a href="#j"  >J</a> - 
+                <a href="#k"  >K</a> - 
+                <a href="#l"  >L</a> - 
+                <a href="#m"  >M</a> - 
+                <a href="#n"  >N</a> - 
+                <a href="#o"  >O</a> - 
+                <a href="#p"  >P</a> - 
+                <a href="#q"  >Q</a> - 
+                <a href="#r"  >R</a> - 
+                <a href="#s"  >S</a> - 
+                <a href="#t"  >T</a> - 
+                <a href="#u"  >U</a> - 
+                <a href="#v"  >V</a> - 
+                <a href="#w"  >W</a> - 
+                <a href="#x"  >X</a> - 
+                <a href="#y"  >Y</a> - 
+                <a href="#z"  >Z</a>
+            </p>
+        </nav>
+        <main>
+        <nav class="gauche" style="color: white;">
+            <ul id="a">- A :</ul>
+            <ul id="b">- B :</ul>
+            <ul id="c">- C :</ul>
+            <ul id="d">- D :</ul>
+            <ul id="e">- E :</ul>
+            <ul id="f">- F :</ul>
+            <ul id="g">- G :</ul>
+            <ul id="h">- H :</ul>
+            <ul id="i">- I :</ul>
+            <ul id="j">- J :</ul>
+            <ul id="k">- K :</ul>
+            <ul id="l">- L :</ul>
+            <ul id="m">- M :</ul>
+            <ul id="n">- N :</ul>
+            <ul id="o">- O :</ul>
+            <ul id="p">- P :</ul>
+            <ul id="q">- Q :</ul>
+            <ul id="r">- R :</ul>
+            <ul id="s">- S :</ul>
+            <ul id="t">- T :</ul>
+            <ul id="u">- U :</ul>
+            <ul id="v">- V :</ul>
+            <ul id="w">- W :</ul>
+            <ul id="x">- X :</ul>
+            <ul id="y">- Y :</ul>
+            <ul id="z">- Z :</ul>
+        </nav>
+        <nav class="droite" style="color: white;" id="contenu">
+        <section id="Propositions">
+            <div>
+                <h3><u>Proposition de personnage</u></h3>
+                <p>
+                    Vous pouvez proposer, ici, des idées de personnages. Si vous voulez modifier un personnage : yannsorelpailhes@gmail.com.
+                    Joignez votre identifiant pour justifier que c'est bien vous. Vous inventez vous-même votre identifiant en créant un personnage,
+                    essayez de garder le même pour chaque personnage.
+                </p>
+                <style>
+                    #formProposition input, #formProposition textarea {
+                        margin: 5px;
+                        display: block;
+                        width: 90%;
+                    }
+                    #btnEnvoyer {
+                        margin: 5px;
+                        cursor: pointer;
+                        background-color: blue;
+                        border-radius: 5px;
+                        color: white;
+                        text-decoration: none;
+                        border: 0px;
+                        padding: 5px;
+                    }
+                    #btnEnvoyer:hover {
+                        background-color: white;
+                        color: blue;
+                    }
+                </style>
+                <form id="formProposition">
+                    <input type="text" placeholder="Votre identifiant personnel choisi" id="idCreator" required>
+                    <input type="text" placeholder="Nom du Personnage" id="nomCreator" required>
+                    <input type="text" placeholder="Race" id="raceCreator">
+                    <input type="text" placeholder="Sexe" id="sexeCreator">
+                    <input type="text" placeholder="Statut (Vivant/Mort/autre)" id="statutCreator">
+                    <input type="text" placeholder="Âge" id="ageCreator">
+                    <input type="text" placeholder="Fonction/Métier" id="fonctionCreator">
+                    <input type="text" placeholder="Lieu de vie" id="lieuCreator">
+                    <input type="text" placeholder="Richesse" id="richesseCreator">
+                    <textarea placeholder="Description du personnage" id="descCreator" rows="4" required></textarea>
+                    <button type="submit" id="btnEnvoyer">Envoyer la proposition</button>
+                </form>
+                <p id="messageRetour" style="font-weight: bold;"></p>
+            </div>
+        </section>
+        <template id="model">
+        <section>
+            <div>
+                <h3 class="nom"></h3>
+                <ul>
+                    <li><b>Race : </b><span class="race"></span></li>
+                    <li><b>Sexe : </b><span class="sexe"></span></li>
+                    <li><b>Statut : </b><span class="statut"></span></li>
+                    <li><b>Âge : </b><span class="age"></span></li>
+                    <li><b>Fonction : </b><span class="fonction"></span></li>
+                    <li><b>Lieu de vie : </b><span class="lieu"></span></li>
+                    <li><b>Richesse : </b><span class="richesse"></span></li>
+                </ul>
+                <p class="desc"></p>
+                <p style="text-align: right;"><i class="creator"></i></p>
+            </div>
+        </section>
+        </template>
+        </nav>
+        </main>
+        <footer>
+            <a href="" style="background-color: rgb(89, 89, 255);color: white;text-decoration: none;" class="haut">Retour en Haut</a>
+            <a href="../index.html" style="background-color: rgb(89, 89, 255);color: white;text-decoration: none;" class="menu">Sommaire</a>
+        </footer>
+        <script>
+            const contenu = document.getElementById("contenu");
+            const model = document.getElementById("model");
+
+              fetch("personnages.json").then(reponse => reponse.json()).then(personnages => {
+                  // Tri alphabétique optionnel des personnages
+                  personnages.sort((a, b) => a.nom.localeCompare(b.nom));
+
+                  personnages.forEach(perso => {
+                    const clone = model.content.cloneNode(true);
+        
+                    // Création d'un identifiant unique pour le lien d'ancrage (ex: "jeckad-authos")
+                    const idAncre = perso.id.replace(/\s+/g, '');
+                    clone.querySelector("section").id = idAncre;
+            
+                    // Remplissage des informations
+                    clone.querySelector(".nom").textContent = perso.nom;
+                    clone.querySelector(".race").textContent = perso.race || "Inconnue";
+                    clone.querySelector(".sexe").textContent = perso.sexe || "Inconnu";
+                    clone.querySelector(".statut").textContent = perso.statut || "Inconnu";
+                    clone.querySelector(".age").textContent = perso.age || "Inconnue";
+                    clone.querySelector(".fonction").textContent = perso.fonction || "Aucune";
+                    clone.querySelector(".richesse").textContent = perso.richesse || "Inconnue";
+                    clone.querySelector(".lieu").textContent = perso.lieu || "Inconnue";
+                    clone.querySelector(".desc").textContent = perso.desc || "";
+                    clone.querySelector(".creator").textContent = perso.creator || "Yann Sorel--Pailhes";
+            
+                    contenu.appendChild(clone);
+                    
+                    // Ajout automatique dans le menu alphabétique de gauche
+                    const premiereLettre = perso.nom.charAt(0).toLowerCase();
+                    const listeLettre = document.getElementById(premiereLettre);
+                    if (listeLettre) {
+                      const li = document.createElement("li");
+                      const a = document.createElement("a");
+                      a.href = `#${idAncre}`;
+                      a.textContent = perso.menu;
+                      li.appendChild(a);
+                      listeLettre.appendChild(li);
+                    }
+                });
+                    if (window.location.hash) {
+                        const cible = document.querySelector(window.location.hash);
+                        if (cible) {
+                            cible.scrollIntoView({ behavior: "smooth" }); // Mettre "smooth" pour un saut chill ou "auto" pour un saut instantané
+                        }
+                    }
+                })
+                .catch(erreur => console.error("Erreur de chargement du JSON :", erreur));
+        </script>
+        <script>
+document.getElementById("formProposition").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const btn = document.getElementById("btnEnvoyer");
+    const msg = document.getElementById("messageRetour");
+    btn.disabled = true;
+    btn.textContent = "Envoi en cours...";
+
+    const nomSaisi = document.getElementById("nomCreator").value.trim();
+    const idPerso = document.getElementById("idCreator").value.trim();
+    
+    // Génération automatique de l'ID (minuscules, sans accents ni espaces)
+    const idGenere = nomSaisi
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+
+    // Création de l'objet JSON exact pour votre fichier personnages.json
+    const nouveauPerso = {
+        id: idGenere,
+        menu: nomSaisi,
+        nom: nomSaisi,
+        race: document.getElementById("raceCreator").value.trim() || "Inconnue",
+        sexe: document.getElementById("sexeCreator").value.trim() || "Inconnu",
+        statut: document.getElementById("statutCreator").value.trim() || "Inconnu",
+        age: document.getElementById("ageCreator").value.trim() || "Inconnue",
+        fonction: document.getElementById("fonctionCreator").value.trim() || "Aucune",
+        lieu: document.getElementById("lieuCreator").value.trim() || "Inconnue",
+        richesse: document.getElementById("richesseCreator").value.trim() || "Inconnue",
+        desc: document.getElementById("descCreator").value.trim(),
+        creator: document.getElementById("idCreator").value.trim()
+    };
+
+    const jsonPretACopier = JSON.stringify(nouveauPerso, null, 4);
+
+    // Envoi par e-mail via Web3Forms
+    try {
+        const response = await fetch("https://web3forms.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: "19f11dd4-8047-4974-af4e-a88bd040cdcc",
+                subject: "Fêderim - Nouveau personnage : " + nomSaisi + " de " + idPerso,
+                from_name: nouveauPerso.creator,
+                JSON_a_ajouter: "\n" + jsonPretACopier
+            })
+        });
+
+        if (response.ok) {
+            msg.style.color = "#4ade80";
+            msg.textContent = "Proposition envoyée avec succès !";
+            document.getElementById("formProposition").reset();
+        } else {
+            throw new Error("Erreur serveur");
+        }
+    } catch (error) {
+        msg.style.color = "#f87171";
+        msg.textContent = "Erreur lors de l'envoi. Réessayez plus tard.";
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Envoyer la proposition";
+    }
+});
+        </script>
+	</body>
+</html>
